@@ -5,16 +5,20 @@ class Student
   def id
     @id
   end
+
   def initialize(name, grade)
     @grade = grade
     @name = name
   end
+
   def self.create_table
     DB[:conn].execute("CREATE TABLE students (id INTEGER PRIMARY KEY, name TEXT, grade INTEGER)")
   end
+
   def self.drop_table
     DB[:conn].execute("DROP TABLE students")
   end
+
   def save
     sql = <<-SQL
       INSERT INTO students (grade, name)
@@ -22,4 +26,5 @@ class Student
     SQL
     DB[:conn].execute(sql, self.name, self.name)
   end
+
 end
