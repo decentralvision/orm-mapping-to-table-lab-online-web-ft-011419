@@ -20,6 +20,6 @@ class Student
       INSERT INTO students (grade, name)
       VALUES (?, ?)
     SQL
-    DB[:conn].execute("INSERT INTO students (grade, name) VALUES (?, ?)", @grade, @name)
+    DB[:conn].execute(sql, @grade, @name)
   end
 end
