@@ -16,6 +16,6 @@ class Student
     DB[:conn].execute("DROP TABLE students")
   end
   def save
-    DB[:conn].execute("INSERT INTO students (?, ?)", @grade, @name)
+    DB[:conn].execute("INSERT INTO students (grade, name) VALUES (?, ?)", @grade, @name)
   end
 end
