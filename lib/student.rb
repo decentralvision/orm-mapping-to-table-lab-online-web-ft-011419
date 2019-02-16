@@ -25,7 +25,7 @@ class Student
       VALUES (?, ?)
     SQL
     DB[:conn].execute(sql, self.name, self.name)
-    @id = DB[:conn].execute("SELECT id FROM students WHERE id = (SELECT MAX(id) FROM students);").flatten
+    @id = DB[:conn].execute("SELECT id FROM students WHERE id = (SELECT MAX(id) FROM students);").flatten(2)
   end
 
 end
