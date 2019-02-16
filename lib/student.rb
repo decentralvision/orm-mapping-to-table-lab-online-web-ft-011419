@@ -24,7 +24,7 @@ class Student
       INSERT INTO students (grade, name)
       VALUES (?, ?)
     SQL
-    DB[:conn].execute(sql, self.name, self.name)
+    DB[:conn].execute(sql, self.grade, self.name)
     @id = DB[:conn].execute("SELECT id FROM students WHERE id = (SELECT MAX(id) FROM students);")[0][0]
   end
 
