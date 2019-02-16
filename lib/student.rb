@@ -27,7 +27,8 @@ class Student
     DB[:conn].execute(sql, self.grade, self.name)
     @id = DB[:conn].execute("SELECT id FROM students WHERE id = (SELECT MAX(id) FROM students);")[0][0]
   end
-  def self.create
+  def self.create(student_attr)
+    self.new(student_attr[:name], student_attr[:grade])
   end
 
 end
