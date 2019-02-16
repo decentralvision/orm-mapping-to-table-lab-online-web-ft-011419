@@ -1,5 +1,5 @@
 class Student
-  attr_accessor :id, :name, :text
+  attr_accessor :id, :grade, :name
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
   def create_table
