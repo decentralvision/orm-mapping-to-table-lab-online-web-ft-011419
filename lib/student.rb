@@ -6,7 +6,9 @@ class Student
     @grade = grade
     @name = name
   end
-
+  def id
+    @id
+  end
   def create_table
     DB[:conn].execute("CREATE TABLE students (id INTEGER PRIMARY KEY, name TEXT, grade INTEGER)")
   end
